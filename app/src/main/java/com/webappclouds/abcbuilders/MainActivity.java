@@ -11,6 +11,8 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +34,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonClick(View view){
-        
+        EditText et1 = findViewById(R.id.myEmail);
+        EditText et2 = findViewById(R.id.myPass);
+
+        String email = et1.getText().toString();
+        String pass = et2.getText().toString();
+
+        String oEmail = "admin";
+        String oPass = "admin";
+
+        if(email.equals(oEmail) && pass.equals(oPass)){
+
+        } else {
+            Toast.makeText(this, "Invalid email or password", Toast.LENGTH_LONG).show();
+        }
     }
 
     @Override
